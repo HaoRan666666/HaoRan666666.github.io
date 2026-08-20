@@ -94,7 +94,8 @@ function startTypewriter() {
 
 // giscus 评论：让语言/主题跟随网站
 function giscusTheme() {
-  return document.documentElement.getAttribute("data-theme") === "dark" ? "transparent_dark" : "light";
+  const dark = document.documentElement.getAttribute("data-theme") === "dark";
+  return location.origin + "/css/" + (dark ? "giscus-theme-dark.css" : "giscus-theme-light.css");
 }
 function giscusLang() {
   return currentLang() === "zh" ? "zh-CN" : "en";
