@@ -2,11 +2,12 @@
 const translations = {
   zh: {
     brand: "徐浩然",
-    nav: { about: "关于", skills: "技术栈", projects: "项目", contact: "联系" },
+    nav: { about: "关于", skills: "技术栈", projects: "项目", timeline: "时间线", contact: "联系" },
     hero: {
       greeting: "你好，我是",
       name: "徐浩然",
       role: "机器人运控工程师",
+      roles: ["机器人运控工程师", "RL 学习者", "四足机器人爱好者", "嵌入式开发者"],
       bio: "RL新手，目前正在学习足式机器人 locomotion。",
       viewProjects: "查看项目",
       contactMe: "联系我",
@@ -57,16 +58,30 @@ const translations = {
       },
     },
     contact: { title: "联系我", subtitle: "欢迎与我交流", email: "邮箱", github: "GitHub" },
-    footer: { copyright: "© 2026 徐浩然. 保留所有权利。" },
+    timeline: {
+      title: "经历时间线",
+      subtitle: "我的成长轨迹",
+      items: [
+        { title: "Mini 人形机器人舞蹈动作训练及部署", org: "项目负责人", period: "2026.08 - 至今" },
+        { title: "机器人运动控制实习", org: "公司待填", period: "2026 - 至今" },
+        { title: "基于 VMC 的四足机器人运动控制", org: "项目负责人", period: "2026.04 - 至今" },
+        { title: "RoboMaster 平衡步兵机器人", org: "项目负责人", period: "2025.09 - 2026.03" },
+        { title: "基于 S 曲线轨迹规划的起重机智能控制系统", org: "核心成员", period: "2025.07 - 2025.08" },
+        { title: "南昌航空大学 · 本科", org: "在读", period: "2024.09 - 至今" },
+      ],
+    },
+    comments: { title: "留言" },
+    footer: { copyright: "© 2026 徐浩然. 保留所有权利。", views: "访问量", visitors: "访客" },
   },
 
   en: {
     brand: "Haoran Xu",
-    nav: { about: "About", skills: "Skills", projects: "Projects", contact: "Contact" },
+    nav: { about: "About", skills: "Skills", projects: "Projects", timeline: "Timeline", contact: "Contact" },
     hero: {
       greeting: "Hi, I'm",
       name: "Haoran Xu",
       role: "Robot Motion Control Engineer",
+      roles: ["Robot Motion Control Engineer", "RL Learner", "Quadruped Robot Enthusiast", "Embedded Developer"],
       bio: "New to RL, currently learning legged robot locomotion.",
       viewProjects: "View Projects",
       contactMe: "Contact Me",
@@ -117,12 +132,59 @@ const translations = {
       },
     },
     contact: { title: "Contact Me", subtitle: "Let's connect", email: "Email", github: "GitHub" },
-    footer: { copyright: "© 2026 Haoran Xu. All rights reserved." },
+    timeline: {
+      title: "Timeline",
+      subtitle: "My journey so far",
+      items: [
+        { title: "Mini Humanoid Robot Dance Motion Training & Deployment", org: "Project Lead", period: "2026.08 - Present" },
+        { title: "Robot Motion Control Internship", org: "Company TBD", period: "2026 - Present" },
+        { title: "VMC-Based Quadruped Robot Motion Control", org: "Project Lead", period: "2026.04 - Present" },
+        { title: "RoboMaster Balancing Infantry Robot", org: "Project Lead", period: "2025.09 - 2026.03" },
+        { title: "S-Curve Trajectory Planning for Crane Control System", org: "Core Member", period: "2025.07 - 2025.08" },
+        { title: "Nanchang Hangkong University · B.Eng", org: "Undergraduate", period: "2024.09 - Present" },
+      ],
+    },
+    comments: { title: "Comments" },
+    footer: { copyright: "© 2026 Haoran Xu. All rights reserved.", views: "Views", visitors: "Visitors" },
   },
 };
 
 function getTranslation(lang, key) {
   return key.split(".").reduce((obj, k) => (obj == null ? obj : obj[k]), translations[lang]);
+}
+
+function renderTimeline(lang) {
+  const list = document.getElementById("timeline-list");
+  if (!list) return;
+  list.innerHTML = "";
+  const items = translations[lang].timeline.items;
+  items.forEach((item) => {
+    const li = document.createElement("li");
+    li.className = "timeline-item";
+
+    const dot = document.createElement("div");
+    dot.className = "timeline-dot";
+    dot.setAttribute("aria-hidden", "true");
+
+    const content = document.createElement("div");
+    content.className = "timeline-content";
+
+    const title = document.createElement("h3");
+    title.className = "timeline-title";
+    title.textContent = item.title;
+
+    const org = document.createElement("p");
+    org.className = "timeline-org";
+    org.textContent = item.org;
+
+    const period = document.createElement("p");
+    period.className = "timeline-period";
+    period.textContent = item.period;
+
+    content.append(title, org, period);
+    li.append(dot, content);
+    list.appendChild(li);
+  });
 }
 
 function applyLanguage(lang) {
@@ -131,6 +193,8 @@ function applyLanguage(lang) {
     const text = getTranslation(lang, el.getAttribute("data-i18n"));
     if (text != null) el.textContent = text;
   });
+
+  renderTimeline(lang);
 
   const langBtn = document.getElementById("lang-toggle");
   if (langBtn) langBtn.textContent = lang === "zh" ? "EN" : "中";

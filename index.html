@@ -23,6 +23,7 @@
         <li><a href="#about" data-i18n="nav.about">About</a></li>
         <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
         <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+        <li><a href="#timeline" data-i18n="nav.timeline">Timeline</a></li>
         <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
       </ul>
       <div class="nav-actions">
@@ -48,7 +49,7 @@
         </div>
         <p class="hero-greeting" data-i18n="hero.greeting">Hi, I'm</p>
         <h1 class="hero-name" data-i18n="hero.name">Haoran Xu</h1>
-        <p class="hero-role" data-i18n="hero.role">Robot Motion Control Engineer</p>
+        <p class="hero-role"><span id="role-text">Robot Motion Control Engineer</span><span class="role-cursor" aria-hidden="true"></span></p>
         <p class="hero-bio" data-i18n="hero.bio">New to RL, currently learning legged robot locomotion.</p>
         <div class="hero-actions">
           <a href="#projects" class="btn btn-primary" data-i18n="hero.viewProjects">View Projects</a>
@@ -203,6 +204,15 @@
       </div>
     </section>
 
+    <!-- 时间线 -->
+    <section id="timeline" class="section">
+      <div class="container">
+        <h2 class="section-title" data-i18n="timeline.title">Timeline</h2>
+        <p class="section-subtitle" data-i18n="timeline.subtitle">My journey so far</p>
+        <ol class="timeline" id="timeline-list"></ol>
+      </div>
+    </section>
+
     <!-- 联系 -->
     <section id="contact" class="section">
       <div class="container">
@@ -226,15 +236,53 @@
         </div>
       </div>
     </section>
+
+    <!-- 留言 -->
+    <section id="comments" class="section">
+      <div class="container">
+        <h2 class="section-title" data-i18n="comments.title">Comments</h2>
+        <div class="giscus" style="max-width: 1080px; margin: 0 auto;"></div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
     <div class="container">
       <p data-i18n="footer.copyright">© 2026 Haoran Xu. All rights reserved.</p>
+      <p class="footer-stats">
+        <span id="busuanzi_container_site_pv">
+          <span data-i18n="footer.views">Views</span>
+          <span id="busuanzi_value_site_pv"></span>
+          <span aria-hidden="true">·</span>
+          <span data-i18n="footer.visitors">Visitors</span>
+          <span id="busuanzi_value_site_uv"></span>
+        </span>
+      </p>
     </div>
   </footer>
 
   <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
+
+  <!-- 访问统计（不蒜子） -->
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  <!-- giscus 评论：需先在 giscus.app 配置，再替换下方 REPO_ID / CATEGORY_ID -->
+  <script src="https://giscus.app/client.js"
+    data-repo="HaoRan666666/HaoRan666666.github.io"
+    data-repo-id="REPO_ID"
+    data-category="General"
+    data-category-id="CATEGORY_ID"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="preferred_color_scheme"
+    data-lang="en"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async>
+  </script>
 </body>
 </html>

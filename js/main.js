@@ -32,6 +32,7 @@ document.getElementById("theme-toggle").addEventListener("click", () => {
 
 document.getElementById("lang-toggle").addEventListener("click", () => {
   setLang(currentLang() === "zh" ? "en" : "zh");
+  startTypewriter();
 });
 
 const menuToggle = document.getElementById("menu-toggle");
@@ -47,5 +48,48 @@ document.querySelectorAll("#nav-links a").forEach((link) => {
   });
 });
 
+// Hero 角色打字机轮换
+const roleTextEl = document.getElementById("role-text");
+let roleIdx = 0;
+let roleCharIdx = 0;
+let roleDeleting = false;
+let roleTimer = null;
+
+function typeRole() {
+  const roles = translations[currentLang()].hero.roles;
+  const word = roles[roleIdx % roles.length];
+
+  if (!roleDeleting) {
+    roleCharIdx++;
+    roleTextEl.textContent = word.slice(0, roleCharIdx);
+    if (roleCharIdx === word.length) {
+      roleDeleting = true;
+      roleTimer = setTimeout(typeRole, 2000);
+      return;
+    }
+    roleTimer = setTimeout(typeRole, 75);
+  } else {
+    roleCharIdx--;
+    roleTextEl.textContent = word.slice(0, roleCharIdx);
+    if (roleCharIdx === 0) {
+      roleDeleting = false;
+      roleIdx = (roleIdx + 1) % roles.length;
+      roleTimer = setTimeout(typeRole, 300);
+      return;
+    }
+    roleTimer = setTimeout(typeRole, 40);
+  }
+}
+
+function startTypewriter() {
+  clearTimeout(roleTimer);
+  roleIdx = 0;
+  roleCharIdx = 0;
+  roleDeleting = false;
+  roleTextEl.textContent = "";
+  roleTimer = setTimeout(typeRole, 300);
+}
+
 setTheme(getInitialTheme());
 setLang(getInitialLang());
+startTypewriter();
