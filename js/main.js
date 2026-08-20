@@ -94,23 +94,25 @@ function startTypewriter() {
 
 // giscus 评论：让语言/主题跟随网站
 function giscusTheme() {
-  return document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
+  return document.documentElement.getAttribute("data-theme") === "dark" ? "transparent_dark" : "light";
 }
 function giscusLang() {
   return currentLang() === "zh" ? "zh-CN" : "en";
 }
+let lastGiscusConfig = "";
 function sendGiscusConfig() {
   const frame = document.querySelector("iframe.giscus-frame");
   if (!frame || !frame.contentWindow) return;
+  const config = giscusTheme() + "|" + giscusLang();
+  if (config === lastGiscusConfig) return;
+  lastGiscusConfig = config;
   frame.contentWindow.postMessage(
     { giscus: { setConfig: { theme: giscusTheme(), lang: giscusLang() } } },
     "https://giscus.app"
   );
 }
-let giscusReady = false;
 window.addEventListener("message", (event) => {
-  if (!giscusReady && event.origin === "https://giscus.app" && event.data && event.data.giscus) {
-    giscusReady = true;
+  if (event.origin === "https://giscus.app" && event.data && event.data.giscus) {
     sendGiscusConfig();
   }
 });
