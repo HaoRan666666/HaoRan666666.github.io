@@ -112,46 +112,6 @@
     });
   }
 
-  // ---- 光标跟随 ----
-  function initCursor() {
-    const finePointer = window.matchMedia("(pointer: fine)").matches;
-    if (!finePointer || reducedMotion) return;
-    const dot = document.getElementById("cursor-dot");
-    const ring = document.getElementById("cursor-ring");
-    if (!dot || !ring) return;
-
-    document.body.classList.add("custom-cursor");
-
-    let cx = -100, cy = -100;
-    let rx = -100, ry = -100;
-    let shown = false;
-
-    window.addEventListener("mousemove", (e) => {
-      cx = e.clientX;
-      cy = e.clientY;
-      if (!shown) {
-        shown = true;
-        dot.style.opacity = "1";
-        ring.style.opacity = "1";
-        rx = cx;
-        ry = cy;
-      }
-      const el = e.target instanceof Element ? e.target : null;
-      const interactive = el && el.closest("a, button, .project-card, .skill-group, .contact-card, input, textarea, [role='button']");
-      ring.classList.toggle("cursor-hover", !!interactive);
-    });
-
-    function loop() {
-      rx += (cx - rx) * 0.16;
-      ry += (cy - ry) * 0.16;
-      dot.style.transform = "translate(" + cx + "px, " + cy + "px) translate(-50%, -50%)";
-      ring.style.transform = "translate(" + rx + "px, " + ry + "px) translate(-50%, -50%)";
-      requestAnimationFrame(loop);
-    }
-    loop();
-  }
-
   initParticles();
   initTilt();
-  initCursor();
 })();
