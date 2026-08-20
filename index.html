@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="zh-CN" data-theme="dark">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="个人主页 - Personal Portfolio" />
-  <title>个人主页 | Portfolio</title>
+  <meta name="description" content="Personal portfolio of Haoran Xu" />
+  <title>Portfolio | Haoran Xu</title>
   <script>
     // 提前应用已保存的主题，避免加载闪烁
     (function () {
@@ -18,16 +18,16 @@
   <!-- 顶部导航 -->
   <header class="site-header">
     <nav class="nav container">
-      <a href="#hero" class="brand" data-i18n="brand">徐浩然</a>
+      <a href="#hero" class="brand" data-i18n="brand">Haoran Xu</a>
       <ul class="nav-links">
-        <li><a href="#about" data-i18n="nav.about">关于</a></li>
-        <li><a href="#skills" data-i18n="nav.skills">技术栈</a></li>
-        <li><a href="#projects" data-i18n="nav.projects">项目</a></li>
-        <li><a href="#contact" data-i18n="nav.contact">联系</a></li>
+        <li><a href="#about" data-i18n="nav.about">About</a></li>
+        <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
+        <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+        <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
       </ul>
       <div class="nav-actions">
-        <button id="lang-toggle" class="icon-btn" type="button" aria-label="切换语言" title="切换语言">EN</button>
-        <button id="theme-toggle" class="icon-btn" type="button" aria-label="切换主题" title="切换主题">
+        <button id="lang-toggle" class="icon-btn" type="button" aria-label="Switch language" title="Switch language">中</button>
+        <button id="theme-toggle" class="icon-btn" type="button" aria-label="Toggle theme" title="Toggle theme">
           <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
           <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         </button>
@@ -42,20 +42,20 @@
         <div class="avatar" aria-hidden="true">
           <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
         </div>
-        <p class="hero-greeting" data-i18n="hero.greeting">你好，我是</p>
-        <h1 class="hero-name" data-i18n="hero.name">徐浩然</h1>
-        <p class="hero-role" data-i18n="hero.role">机器人运控工程师</p>
-        <p class="hero-bio" data-i18n="hero.bio">RL新手，目前正在学习足式机器人 locomotion。</p>
+        <p class="hero-greeting" data-i18n="hero.greeting">Hi, I'm</p>
+        <h1 class="hero-name" data-i18n="hero.name">Haoran Xu</h1>
+        <p class="hero-role" data-i18n="hero.role">Robot Motion Control Engineer</p>
+        <p class="hero-bio" data-i18n="hero.bio">New to RL, currently learning legged robot locomotion.</p>
         <div class="hero-actions">
-          <a href="#projects" class="btn btn-primary" data-i18n="hero.viewProjects">查看项目</a>
-          <a href="#contact" class="btn btn-ghost" data-i18n="hero.contactMe">联系我</a>
+          <a href="#projects" class="btn btn-primary" data-i18n="hero.viewProjects">View Projects</a>
+          <a href="#contact" class="btn btn-ghost" data-i18n="hero.contactMe">Contact Me</a>
         </div>
         <div class="social-links">
           <!-- 预留社交链接，替换 href 与图标 -->
           <a href="https://github.com/HaoRan666666" class="social-link" aria-label="GitHub" title="GitHub" target="_blank" rel="noopener">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.27-.01-1.17-.02-2.12-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.25 3.34.95.1-.74.4-1.25.72-1.54-2.55-.29-5.23-1.28-5.23-5.68 0-1.25.45-2.28 1.18-3.08-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.76.11 3.05.73.8 1.18 1.83 1.18 3.08 0 4.41-2.69 5.38-5.25 5.67.41.35.77 1.04.77 2.1 0 1.52-.01 2.74-.01 3.11 0 .31.21.67.8.56A10.52 10.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
           </a>
-          <a href="mailto:3126718011@qq.com" class="social-link" aria-label="邮箱" title="邮箱">
+          <a href="mailto:3126718011@qq.com" class="social-link" aria-label="Email" title="Email">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
           </a>
         </div>
@@ -65,17 +65,17 @@
     <!-- 关于我 -->
     <section id="about" class="section">
       <div class="container">
-        <h2 class="section-title" data-i18n="about.title">关于我</h2>
-        <p class="section-subtitle" data-i18n="about.subtitle">简单介绍一下自己</p>
+        <h2 class="section-title" data-i18n="about.title">About Me</h2>
+        <p class="section-subtitle" data-i18n="about.subtitle">A brief introduction</p>
         <div class="about-grid">
           <div class="about-text">
-            <p data-i18n="about.p1">我是一名来自南昌航空大学的大二在读本科生。</p>
-            <p data-i18n="about.p2">哈哈哈哈哈哈哈</p>
+            <p data-i18n="about.p1">I am a sophomore undergraduate student at Nanchang Hangkong University (about to be a junior, QAQ).</p>
+            <p data-i18n="about.p2">Hahaha, will write more later.</p>
           </div>
           <ul class="about-facts">
-            <li><span class="fact-label" data-i18n="about.location">所在地</span><span class="fact-value" data-i18n="about.locationValue">中国上海</span></li>
-            <li><span class="fact-label" data-i18n="about.email">邮箱</span><span class="fact-value">3126718011@qq.com</span></li>
-            <li><span class="fact-label" data-i18n="about.status">状态</span><span class="fact-value" data-i18n="about.statusValue">在职</span></li>
+            <li><span class="fact-label" data-i18n="about.location">Location</span><span class="fact-value" data-i18n="about.locationValue">Shanghai, China</span></li>
+            <li><span class="fact-label" data-i18n="about.email">Email</span><span class="fact-value">3126718011@qq.com</span></li>
+            <li><span class="fact-label" data-i18n="about.status">Status</span><span class="fact-value" data-i18n="about.statusValue">Employed</span></li>
           </ul>
         </div>
       </div>
@@ -84,18 +84,18 @@
     <!-- 技术栈 -->
     <section id="skills" class="section">
       <div class="container">
-        <h2 class="section-title" data-i18n="skills.title">技术栈</h2>
-        <p class="section-subtitle" data-i18n="skills.subtitle">我常用的技术与工具</p>
+        <h2 class="section-title" data-i18n="skills.title">Tech Stack</h2>
+        <p class="section-subtitle" data-i18n="skills.subtitle">Technologies & tools I use</p>
         <div class="skills-groups">
           <div class="skill-group">
-            <h3 class="skill-group-title" data-i18n="skills.embedded">嵌入式</h3>
+            <h3 class="skill-group-title" data-i18n="skills.embedded">Embedded</h3>
             <ul class="skill-list">
               <li class="skill-item">MCU</li>
               <li class="skill-item">RTOS</li>
             </ul>
           </div>
           <div class="skill-group">
-            <h3 class="skill-group-title" data-i18n="skills.simulation">仿真</h3>
+            <h3 class="skill-group-title" data-i18n="skills.simulation">Simulation</h3>
             <ul class="skill-list">
               <li class="skill-item">Isaac Sim</li>
               <li class="skill-item">MATLAB</li>
@@ -103,14 +103,14 @@
             </ul>
           </div>
           <div class="skill-group">
-            <h3 class="skill-group-title" data-i18n="skills.mechanical">结构</h3>
+            <h3 class="skill-group-title" data-i18n="skills.mechanical">Mechanical Design</h3>
             <ul class="skill-list">
-              <li class="skill-item" data-i18n="skills.threeDPrint">3D打印</li>
+              <li class="skill-item" data-i18n="skills.threeDPrint">3D Printing</li>
               <li class="skill-item">SolidWorks</li>
             </ul>
           </div>
           <div class="skill-group">
-            <h3 class="skill-group-title" data-i18n="skills.tools">工具</h3>
+            <h3 class="skill-group-title" data-i18n="skills.tools">Tools</h3>
             <ul class="skill-list">
               <li class="skill-item">Git</li>
               <li class="skill-item">Linux</li>
@@ -118,7 +118,7 @@
             </ul>
           </div>
           <div class="skill-group">
-            <h3 class="skill-group-title" data-i18n="skills.programming">编程</h3>
+            <h3 class="skill-group-title" data-i18n="skills.programming">Programming</h3>
             <ul class="skill-list">
               <li class="skill-item">Python</li>
               <li class="skill-item">C</li>
@@ -132,17 +132,17 @@
     <!-- 项目经历 -->
     <section id="projects" class="section">
       <div class="container">
-        <h2 class="section-title" data-i18n="projects.title">项目经历</h2>
-        <p class="section-subtitle" data-i18n="projects.subtitle">我做过的项目</p>
+        <h2 class="section-title" data-i18n="projects.title">Projects</h2>
+        <p class="section-subtitle" data-i18n="projects.subtitle">Things I've built</p>
         <div class="projects-grid">
           <article class="project-card">
             <div class="project-thumb" aria-hidden="true">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M8 20h8M12 4v16"/></svg>
             </div>
             <div class="project-body">
-              <h3 class="project-title" data-i18n="projects.item1.title">基于 VMC 的四足机器人运动控制</h3>
-              <p class="project-meta" data-i18n="projects.item1.meta">项目负责人 · 2026.04 - 至今</p>
-              <p class="project-desc" data-i18n="projects.item1.desc">负责 12DOF 四足机器人运动控制算法开发，基于 VMC 构建足端虚拟弹簧-阻尼控制模型，结合复合摆线轨迹规划与逆运动学生成关节目标位置，采用 CAN 通信完成 12 关节协同控制，实现基础行走验证；项目获多家企业合作支持，累计赞助 10w+。</p>
+              <h3 class="project-title" data-i18n="projects.item1.title">VMC-Based Quadruped Robot Motion Control</h3>
+              <p class="project-meta" data-i18n="projects.item1.meta">Project Lead · 2026.04 - Present</p>
+              <p class="project-desc" data-i18n="projects.item1.desc">Developed motion control algorithms for a 12-DOF quadruped robot, building a virtual spring-damper foot-end model based on VMC, combining cycloid trajectory planning with inverse kinematics, and coordinating 12 joints over CAN to achieve basic walking. Secured 100k+ in corporate sponsorship.</p>
               <div class="project-tags">
                 <span class="tag">VMC</span>
                 <span class="tag">Inverse Kinematics</span>
@@ -156,9 +156,9 @@
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M8 20h8M12 4v16"/></svg>
             </div>
             <div class="project-body">
-              <h3 class="project-title" data-i18n="projects.item2.title">RoboMaster 平衡步兵机器人</h3>
-              <p class="project-meta" data-i18n="projects.item2.meta">项目负责人 · 2025.09 - 2026.03</p>
-              <p class="project-desc" data-i18n="projects.item2.desc">负责轮腿式平衡机器人底盘及二维云台控制，基于状态空间与 Jacobian 线性化建模，采用 LQR 与 VMC 设计控制器并用 MATLAB/Simulink、Simscape 仿真验证；实现实机调试，支持腿长控制、离地检测、打滑检测、翻倒自起等功能，云台采用前馈+双环 PID 实现稳定跟踪。</p>
+              <h3 class="project-title" data-i18n="projects.item2.title">RoboMaster Balancing Infantry Robot</h3>
+              <p class="project-meta" data-i18n="projects.item2.meta">Project Lead · 2025.09 - 2026.03</p>
+              <p class="project-desc" data-i18n="projects.item2.desc">Designed chassis and 2-axis gimbal control for a wheel-legged balancing robot, modeling the system via state-space and Jacobian linearization, implementing LQR/VMC controllers validated with MATLAB/Simulink and Simscape, plus feedforward + dual-loop PID gimbal tracking with leg-length control, lift-off/slip detection and self-righting.</p>
               <div class="project-tags">
                 <span class="tag">LQR</span>
                 <span class="tag">VMC</span>
@@ -173,9 +173,9 @@
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M8 20h8M12 4v16"/></svg>
             </div>
             <div class="project-body">
-              <h3 class="project-title" data-i18n="projects.item3.title">基于 S 曲线轨迹规划的起重机智能控制系统</h3>
-              <p class="project-meta" data-i18n="projects.item3.meta">核心成员 · 2025.07 - 2025.08</p>
-              <p class="project-desc" data-i18n="projects.item3.desc">负责多自由度机器人系统的运动控制与轨迹规划，基于 STM32 完成底盘、旋转、升降与机械爪协同控制，设计七段式 S 曲线轨迹规划算法使启停冲击降低 70%+，构建位置-速度双闭环 PID 与速度前馈，融合编码器与激光测距实现毫米级定位。</p>
+              <h3 class="project-title" data-i18n="projects.item3.title">S-Curve Trajectory Planning for Crane Control System</h3>
+              <p class="project-meta" data-i18n="projects.item3.meta">Core Member · 2025.07 - 2025.08</p>
+              <p class="project-desc" data-i18n="projects.item3.desc">Developed motion control and trajectory planning for a multi-DOF robot system, implementing coordinated chassis/rotation/lift/gripper control on STM32, a 7-segment S-curve planner cutting start/stop shock by 70%+, and dual-loop PID with velocity feedforward, fusing encoder and laser-ranging data for millimeter-level positioning.</p>
               <div class="project-tags">
                 <span class="tag">STM32</span>
                 <span class="tag">S-curve</span>
@@ -190,9 +190,9 @@
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M8 20h8M12 4v16"/></svg>
             </div>
             <div class="project-body">
-              <h3 class="project-title" data-i18n="projects.item4.title">Mini 人形机器人舞蹈动作训练及部署</h3>
-              <p class="project-meta" data-i18n="projects.item4.meta">2026.08 - 至今</p>
-              <p class="project-desc" data-i18n="projects.item4.desc">项目简介待补充。</p>
+              <h3 class="project-title" data-i18n="projects.item4.title">Mini Humanoid Robot Dance Motion Training & Deployment</h3>
+              <p class="project-meta" data-i18n="projects.item4.meta">2026.08 - Present</p>
+              <p class="project-desc" data-i18n="projects.item4.desc">Hahaha, will write this up later.</p>
             </div>
           </article>
         </div>
@@ -202,14 +202,14 @@
     <!-- 联系 -->
     <section id="contact" class="section">
       <div class="container">
-        <h2 class="section-title" data-i18n="contact.title">联系我</h2>
-        <p class="section-subtitle" data-i18n="contact.subtitle">欢迎与我交流</p>
+        <h2 class="section-title" data-i18n="contact.title">Contact Me</h2>
+        <p class="section-subtitle" data-i18n="contact.subtitle">Let's connect</p>
         <div class="contact-cards">
           <a href="mailto:3126718011@qq.com" class="contact-card">
             <span class="contact-icon">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
             </span>
-            <span class="contact-label" data-i18n="contact.email">邮箱</span>
+            <span class="contact-label" data-i18n="contact.email">Email</span>
             <span class="contact-value">3126718011@qq.com</span>
           </a>
           <a href="https://github.com/HaoRan666666" class="contact-card" target="_blank" rel="noopener">
@@ -226,7 +226,7 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p data-i18n="footer.copyright">© 2026 徐浩然. 保留所有权利。</p>
+      <p data-i18n="footer.copyright">© 2026 Haoran Xu. All rights reserved.</p>
     </div>
   </footer>
 

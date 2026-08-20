@@ -13,7 +13,7 @@ function setTheme(theme) {
 
 function getInitialLang() {
   const saved = localStorage.getItem(LANG_KEY);
-  return saved === "zh" || saved === "en" ? saved : "zh";
+  return saved === "zh" || saved === "en" ? saved : "en";
 }
 
 function currentLang() {
