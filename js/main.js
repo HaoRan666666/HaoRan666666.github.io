@@ -34,5 +34,18 @@ document.getElementById("lang-toggle").addEventListener("click", () => {
   setLang(currentLang() === "zh" ? "en" : "zh");
 });
 
+const menuToggle = document.getElementById("menu-toggle");
+const siteHeader = document.querySelector(".site-header");
+menuToggle.addEventListener("click", () => {
+  const open = siteHeader.classList.toggle("menu-open");
+  menuToggle.setAttribute("aria-expanded", String(open));
+});
+document.querySelectorAll("#nav-links a").forEach((link) => {
+  link.addEventListener("click", () => {
+    siteHeader.classList.remove("menu-open");
+    menuToggle.setAttribute("aria-expanded", "false");
+  });
+});
+
 setTheme(getInitialTheme());
 setLang(getInitialLang());

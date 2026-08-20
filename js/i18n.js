@@ -20,7 +20,7 @@ const translations = {
       locationValue: "中国·上海",
       email: "邮箱",
       status: "状态",
-      statusValue: "在职",
+      statusValue: "学生（实习中）",
     },
     skills: {
       title: "技术栈",
@@ -80,7 +80,7 @@ const translations = {
       locationValue: "Shanghai, China",
       email: "Email",
       status: "Status",
-      statusValue: "Employed",
+      statusValue: "Student (interning)",
     },
     skills: {
       title: "Tech Stack",
