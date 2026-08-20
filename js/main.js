@@ -28,11 +28,13 @@ function setLang(lang) {
 document.getElementById("theme-toggle").addEventListener("click", () => {
   const next = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
   setTheme(next);
+  sendGiscusConfig();
 });
 
 document.getElementById("lang-toggle").addEventListener("click", () => {
   setLang(currentLang() === "zh" ? "en" : "zh");
   startTypewriter();
+  sendGiscusConfig();
 });
 
 const menuToggle = document.getElementById("menu-toggle");
@@ -89,6 +91,29 @@ function startTypewriter() {
   roleTextEl.textContent = "";
   roleTimer = setTimeout(typeRole, 300);
 }
+
+// giscus 评论：让语言/主题跟随网站
+function giscusTheme() {
+  return document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
+}
+function giscusLang() {
+  return currentLang() === "zh" ? "zh-CN" : "en";
+}
+function sendGiscusConfig() {
+  const frame = document.querySelector("iframe.giscus-frame");
+  if (!frame || !frame.contentWindow) return;
+  frame.contentWindow.postMessage(
+    { giscus: { setConfig: { theme: giscusTheme(), lang: giscusLang() } } },
+    "https://giscus.app"
+  );
+}
+let giscusReady = false;
+window.addEventListener("message", (event) => {
+  if (!giscusReady && event.origin === "https://giscus.app" && event.data && event.data.giscus) {
+    giscusReady = true;
+    sendGiscusConfig();
+  }
+});
 
 setTheme(getInitialTheme());
 setLang(getInitialLang());
